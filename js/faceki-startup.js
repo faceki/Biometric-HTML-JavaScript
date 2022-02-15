@@ -2,7 +2,7 @@ const client_id='af7d4790-04a9-11ec-aecf-1dca4d5eaaf0';
 const client_email='demo@faceki.com';
 const BASE_URL = "https://app.faceki.com/";
 const pathUrl = window.location.pathname;
-const baseUrl = window.location.origin+"/";
+const baseUrl = window.location.origin;
 const pathUrlArray1 = pathUrl.split("/");
 const pathUrlArray = pathUrlArray1.filter(function (el) {
     return el != '';
@@ -34,7 +34,7 @@ function getToken(type){
 }
 
 function showFacekiLoginWindow(type,token){
-    url = baseUrl+'/'+newPath+"/faceki-sign-in.html?route=signup&auth="+token
+    url = baseUrl+'/'+newPath+"/faceki-sign-in.html?route=login&auth="+token
     window.location.replace(url);
 }
 
