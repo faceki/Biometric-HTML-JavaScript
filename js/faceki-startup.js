@@ -7,7 +7,7 @@ const pathUrlArray1 = pathUrl.split("/");
 const pathUrlArray = pathUrlArray1.filter(function (el) {
     return el != '';
 });
-const newPath=pathUrlArray.join("/");
+var newPath=pathUrlArray.join("/");
 localStorage.setItem("client_id",client_id);
 localStorage.setItem("client_email",client_email);
 function getToken(type){
@@ -27,19 +27,28 @@ function getToken(type){
     }).then(function(res){
         if(type=='login'){
             showFacekiLoginWindow(type,res.token)
+        }else if(type == 'pre_signup'){
+            showFacekiPreSignUpWindow(type,res.token)
         }else if(type == 'signup'){
+            pathUrlArray.pop();
+            newPath=pathUrlArray.join("/");
             showFacekiSignUpWindow(type,res.token)
         }
     })
 }
 
 function showFacekiLoginWindow(type,token){
-    url = baseUrl+'/'+newPath+"/faceki-sign-in.html?route=login&auth="+token
+    url = baseUrl+'/'+newPath+"/faceki-sign-in.html?route=login&auth="+token;
+    window.location.replace(url);
+}
+
+function showFacekiPreSignUpWindow(type,token){
+    url = baseUrl+'/'+newPath+"/faceki-pre-sign-up.html";
     window.location.replace(url);
 }
 
 function showFacekiSignUpWindow(type,token){
-    url = baseUrl+'/'+newPath+"/faceki-sign-up.html?route=signup&auth="+token
+    url = baseUrl+'/'+newPath+"/faceki-sign-up.html?route=signup&auth="+token;
     window.location.replace(url);
 }
 
