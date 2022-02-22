@@ -13,11 +13,23 @@
   <link rel="stylesheet" type="text/css" href="request_assets/css/bootstrap.min.css" />
   <!--link style css-->
   <link rel="stylesheet" type="text/css" href="request_assets/css/style.css" />
+  <style>
+    @media (max-width: 767px){
+      .page_loader{
+         margin-left: 17% !important;margin-top: 10% !important;
+      }
+    }
+    @media (min-width: 1000px){
+      .page_loader{
+         margin-left: 42% !important;margin-top: 10% !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <img id="page_loader" style="display: none; margin-left: 42%;margin-top: 10%;" src="assets/img/icon/loader.gif">
+  <img class="page_loader" id="page_loader" style="display: none;" src="assets/img/icon/loader.gif">
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -251,11 +251,24 @@
      <canvas id="canvas2" style="display: none;"></canvas>
     </section> 
 
-    <div class="camera" id="loader" style="display: none; margin-left: 42% !important;margin-top: 10% !important;">
+    <div class="camera camera_loader" id="loader" style="display: none;">
             <img class="loader" src="image/loader.gif" >
             <div class="roboto-normal-santas-gray-18px" style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLEASE WAIT</div>
             <h4 id="message-1"></h4>
     </div>
+    
+  <style>
+    @media (max-width: 767px){
+      .camera_loader{
+         margin-left: 25% !important;margin-top: 10% !important;
+      }
+    }
+    @media (min-width: 1000px){
+      .camera_loader{
+         margin-left: 42% !important;margin-top: 10% !important;
+      }
+    }
+  </style>
 
   </body>
 </html>
